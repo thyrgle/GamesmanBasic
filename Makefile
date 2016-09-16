@@ -1,5 +1,5 @@
 build:
-	python solver.py fourtozero.py tests.py
+	python3 solver.py fourtozero.py tests.py
 
 test:
 	nosetests

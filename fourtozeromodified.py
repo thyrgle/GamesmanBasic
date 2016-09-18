@@ -1,3 +1,5 @@
+# Modified version of four to zero where you can take 3 at any move
+
 import solver
 
 
@@ -10,7 +12,7 @@ def primitive(state):
 
 
 def gen_moves(state):
-    return [move for move in [-1, -2] if state + move >= 0]
+    return [move for move in [-1, -2, -3] if state + move >= 0]
 
 
 def do_move(state, move):

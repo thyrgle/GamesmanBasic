@@ -26,8 +26,6 @@ def test_init_pos():
                          fourtozero.gen_moves,
                          fourtozero.do_move) == solver.LOSS
 
-
-
 def change_dwult():
     solver.WIN = 9
     solver.LOSS = 8
@@ -48,7 +46,8 @@ def test_dwult_abstraction():
                          fourtozero.gen_moves,
                          fourtozero.do_move) == solver.WIN
 
-def test_four_to_one_values():
+# Tests different values for original 4 to 0 game
+def test_four_to_zero_values():
     for losing_state in fourtozero_losing_states():
         assert solver.solver(lambda : losing_state, fourtozero.primitive,
                          fourtozero.gen_moves,
@@ -58,7 +57,8 @@ def test_four_to_one_values():
                          fourtozero.gen_moves,
                          fourtozero.do_move) == solver.WIN
 
-def test_four_to_one_modified_values():
+# Tests a different game: 4 to 0 where you can take 3 at a time
+def test_four_to_zero_modified_values():
     for losing_state in fourtozero_modified_losing_states():
         assert solver.solver(lambda : losing_state, fourtozeromodified.primitive,
                          fourtozeromodified.gen_moves,
